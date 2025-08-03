@@ -1,0 +1,27 @@
+<!--选择器优先级顺序:行内样式(标签内直接添加样式) > ID选择器 > 类选择器 > 元素选择器 -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>合并选择器</title>
+    <style>
+        span,p{ /*标签的合并容器，合并选择器的作用是提取共同样式，减少重复代码*/
+            color:red;
+            font-size:30px;
+        }
+        
+        .text,.title{ /*类的合并标签*/
+            color:green;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+<p>这是使用span和p标签合并选择器的p标签</p>
+<span>这是使用span和p标签合并选择器的span标签</span>
+
+<p class="title">这是使用title和text类合并选择器的p标签(class="title")</p>
+<span class="text">这是使用title和text类合并选择器的span标签(class="text")</span>
+</body>
+</html>

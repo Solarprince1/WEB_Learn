@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>清除浮动(伪对象方式)</title>
+    <style>
+        .container{
+            width: 500px;
+            background-color: #888;
+        }
+        
+        .container::after{
+        /*    这就是伪对象的定义形式*/
+        /*    ::after会在.parent元素的内容末尾插入一个虚拟的子元素(一个空白的,类似<div class="clear"></div>)*/
+            content: "";
+            /*content是::after/::before必须的属性，即使为空字符串 "" 也需要存在*/
+            /*作用是告诉浏览器在此处插入内容（即使内容为空），否则伪元素不会被渲染*/
+            display: block;
+            /*该属性作用是强制把元素改为块级元素(因为行级元素会忽略clear)*/
+            clear: both;
+            /*让伪元素移动到所有浮动元素的下方，从而撑开父容器的高度,父容器会包含伪元素的位置，间接包含了浮动子元素的高度*/
+        }
+        
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            margin: 5px;
+            float:left;
+        }
+        .text{
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="text"></div>
+<!--    在里面的元素还是会受影响，需要添加一个text-->
+</div>
+<div class="text"></div>
+</body>
+</html>

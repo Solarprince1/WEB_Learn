@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CSS初始</title>
+    <style>
+    /*CSS样式，如果与主HTML放在一起则建议放在head内，同样你应该可以注意到注释方式也变了，这是CSS和Javascript中的注释方法*/
+    /*CSS规则由选择器以及一条或多条声明(样式)构成，选择器通常是需要改变样式的HTML元素，每条声明由一个属性和一个值组成*/
+    
+    h1{ /*这里h1就是选择器，选择了h1这一类元素进行更改，所有的h1都将按此样式呈现*/
+        color:blue;
+        font-size:20px;
+        /*属性与值之间用冒号隔开，两个声明之间用分号隔开*/
+        /*从现实效果上看，通过CSS样式的更改，h3标题的文字甚至可以比h1的更大(font-size是字体大小的意思)*/
+    }
+    h3{
+        color:green;
+        font-size:30px;
+    }
+    </style>
+</head>
+<body>
+<h1>标题内容h1</h1>
+<h3>标题内容h3</h3>
+</body>
+</html>

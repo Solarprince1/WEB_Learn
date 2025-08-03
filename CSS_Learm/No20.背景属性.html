@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>背景属性</title>
+    <style>
+        b{
+            color:red;
+            font-size:15px;
+        }
+        
+        /*背景属性用于控制元素的背景外观，包括颜色、图片、位置、重复方式等*/
+        .box1{
+            width: 400px;
+            height: 400px;
+            background: yellow;
+        /*    背景颜色，与color一样可以用文字、16进制、rgb、rgba形式定义*/
+        
+        }
+        .box2{
+            width: 700px;
+            height: 700px;
+            background: red;
+            background-image: url("../img/奥本海默.webp");
+        }
+        .box3{
+            width: 700px;
+            height: 700px;
+            background: red;
+            background-image: url("../img/奥本海默.webp");
+            background-repeat: no-repeat;
+        /*    设置平铺方式,默认是repeat,repeat-x只在水平方向平铺,repeat-y只在垂直方向平铺,no-repeat不平铺*/
+        }
+        
+        .box4{
+            width: 700px;
+            height: 700px;
+            background-image: url("../img/奥本海默.webp");
+            background-size: cover;
+        /*    该属性设置背景图像的大小，可以是宽度+高度、百分比+百分比(占据容器宽度和高度的百分比)、cover、contain*/
+        /*    cover保持图片的纵横比(即原图比例)缩放到完全覆盖背景区域的最小大小,但是图片多出容器的部分就看不见了，即目的是填满画面且比例不变*/
+        /*    contain保持图片的纵横比(即原图比例)缩放到适合背景区域的最大大小，这种方法不会切割图片，可以完全显示但是容器可能占不满*/
+        }
+        .box5{
+            width:150px;
+            height:150px;
+            background-image: url("../img/奥本海默.webp");
+            background-position: left bottom;
+        /*    该属性设置图片的起始位置，默认是0% 0%(左上)。除百分号外，还可以top，center，bottom，right，left之间两两搭配,
+                也可以直接用px*/
+        }
+    </style>
+</head>
+<body>
+<div class="box1"><span>这是一个添加background样式的div容器</span></div>
+<br>
+<div class="box2">
+    <b style="color:red;">这是一个添加background样式的比较大的div容器</b><br>
+    <b>可以看见容器的长宽大于原图时会重复平铺,这是因为background-image默认不会让容器出现空白，会多次平铺填满空白</b>
+</div>
+<br>
+<div class="box3">
+    <b>这是一个添加background-image和background-repeat的较大的div标签</b><br>
+    <b>可以看见哪怕还有空间也不会重复平铺了</b>
+</div>
+<br>
+<div class="box4">
+    <b>这是一个添加了background-size的div标签</b>
+</div>
+<br>
+<div class="box5">
+    <b>这是一个添加了background-position的div标签</b><br>
+    <b>可以看见容器较小，是从图片左下部分渲染的</b>
+</div>
+</body>
+</html>

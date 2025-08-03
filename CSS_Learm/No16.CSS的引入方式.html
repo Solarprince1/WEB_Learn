@@ -1,0 +1,18 @@
+<!--本节主要阐述CSS如何与HTML结合起来-->
+<!--方法一：内联样式，即在标签内直接添加属性。缺乏整体性和规划性，不利于维护。-->
+<!--    例如：<p style="background:orange;font-size:12px;">示例</p>-->
+<!--方法二：内部样式，即CSS存在在HTML的head(或其他位置)中，详见No15.html。优点是便于维护，缺点是多个页面之间容易混乱-->
+<!--方法三：外部样式(最推荐)，即CSS单独写在一个CSS文件中，在需要该样式的HTML中引入该CSS文件(在head部分使用<link>标签)，避免重复写代码-->
+<!--    <link rel="stylesheet" type="text/css" href="xxx.css">,详见No17.html  -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CSS的引入方式</title>
+    
+</head>
+<body>
+<p style="color:red;font-size: 24px">内联样式的方案</p>
+</body>
+</html>

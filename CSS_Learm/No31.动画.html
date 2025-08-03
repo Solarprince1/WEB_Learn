@@ -1,0 +1,92 @@
+<!--动画是一个元素逐渐变化为另一个元素的效果-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>动画</title>
+    <style>
+    /*  定义动画规则的核心语法,用于控制动画的关键帧(即动画在不同时间点的状态)*/
+        @keyframes MyAnimation {
+            /*可以用百分数来确定关键帧的样式,0%表示动画开始,100%表示动画结束,分别可以用from和to表示,但是一旦用from、to就无法添加其他帧*/
+            0%{
+                width: 200px;
+                background-color: red;
+            /*    除了颜色这些，所有css通用的属性都可以放在里面*/
+            }
+            50%{
+                width: 400px;
+                background-color: green;
+            }
+            100%{
+                width: 200px;
+                background-color: red;
+            }
+        }
+        
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            animation: MyAnimation 3s infinite linear;
+        /*    执行动画,格式如下：
+            animation: name duration timing-function delay iteration-count direction
+               name 动画名称; duration 动画持续时间(单位s或ms).这两个是必须有的值，其余的是可选的
+               timing-function 动画曲线(如ease(默认)、linear、ease-in-out)。
+               delay	动画延迟开始时间（如 1s）。
+               iteration-count	播放次数（如 2 或 infinite(无限循环)）。
+               direction	播放方向（normal、reverse、alternate）。
+               play-state	动画播放状态（running、paused）。
+                    这些也可以分开写，比如animation-name、animation-iteration-count...*/
+        }
+        .box1:hover{
+            /*hover是一个伪类选择器,用于定义元素在被鼠标悬停时的样式,用于产生及时反馈*/
+            animation-play-state: paused;
+        /*    这样可以设置成鼠标悬停在元素上时停止动画*/
+        }
+        .box{
+            width: 400px;
+            height: 400px;
+            background-color: aqua;
+            border-radius: 20px;
+            box-shadow: 0 1px 2px rgba(0,0,0,.3);
+        }
+        @keyframes breath {/*做一个呼吸动效*/
+            0%{
+                opacity: 0.2;
+                /*公司属性控制元素透明度,值越小越透明*/
+                box-shadow: 5px 5px 5px rgba(255,255,255,0.8);
+            }
+            25%{
+                opacity: 0.5;
+                box-shadow: 5px 5px 5px rgba(255,255,255,0.5);
+            }
+            50%{
+                opacity: 1;
+                box-shadow: 5px 5px 5px rgba(100,100,100,0.8);
+            75%{
+                opacity: 0.5;
+                box-shadow: 5px 5px 5px rgba(255,255,255,0.5);
+            }
+            }
+            100%{
+                opacity: 0.2;
+                box-shadow: 0 1px 30px rgba(255,255,255,1);
+            }
+        }
+        
+        .box2{
+            width: 400px;
+            height: 400px;
+            background-color: cornflowerblue;
+            animation: breath 5s infinite ease-out/*这是减速的效果*/;
+            animation-direction: alternate;
+        /*    播放方向，alternate是第偶数次正向播放，第奇数次反向播放*/
+        }
+    </style>
+</head>
+<body>
+<div class="box1"></div>
+<div class="box2"></div>
+</body>
+</html>

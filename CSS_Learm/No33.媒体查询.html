@@ -1,0 +1,62 @@
+<!--媒体查询能在不同条件下有不同的样式(类似适配屏幕)-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+<!--    用于控制网页在移动设备上的视口(viewport)表现,确保网页在不同屏幕尺寸下正确显示,即不会按设备屏幕大小进行缩放,元素大小是多少就是多少-->
+    <title>媒体查询</title>
+    <style>
+        .box1{
+            width: 300px;
+            height: 300px;
+        }
+        
+        /*以下代码是在不同屏幕尺寸做适配(即每个不同的尺寸类型都有一套显示方式)*/
+        @media  screen and (max-width: 768px) {
+            /*如果最大宽度小于768，那这就是手机屏幕，在手机屏幕上显示蓝色*/
+            .box1 {
+                background-color: aqua;
+            }
+            .p1, .p2{
+                display: none;
+            }
+        }
+        @media screen and (min-width: 768px) and (max-width: 1200px) {
+            /*如果最小宽度大于768，最大宽度小于1200，那这就是平板屏幕，在平板屏幕上显示绿色*/
+            .box1 {
+                background-color: lime;
+            }
+            .p1{
+                display: none;
+            }
+            .p2{
+                display: block;
+            }
+        }
+        @media screen and (min-width: 1200px) {
+            /*如果最小宽度大于1200，那这就是电脑屏幕，在电脑屏幕上显示红色*/
+            .box1 {
+                background-color: red;
+            }
+            .p1, .p2{
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+<a href="../img/PC端显示.png">PC端显示</a><br>
+<a href="../img/不加媒体查询的手机端.png">没有加上端口适配元标签的手机端显示,可以看见元素是按屏幕比例缩小了</a><br>
+<a href="../img/加上媒体查询的手机端.png">加上端口适配元标签的手机端显示,可以看见元素按原始大小显示,并没有缩放</a>
+<div class="box1">
+    <a href="../img/PC端显示.png">在电脑端显示红色</a><br>
+    <a href="../img/ipad端显示.png">在iPad端显示绿色</a><br>
+    <a href="../img/手机端显示.png">在手机端显示蓝色</a>
+</div>
+
+<p class="p1">只在电脑屏幕显示</p>
+<p class="p2">只在电脑和平板屏幕显示</p>
+</body>
+</html>

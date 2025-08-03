@@ -1,0 +1,56 @@
+<!--浮动就是增加一个浮层来放置内容，脱离文档流(网页默认排列规则，从上到下从左到右)-->
+<!--脱离后可以理解为页面有两层，一层是底层的原页面，一层是脱离文档流的上层页面，会出现折叠现象-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>浮动</title>
+    <style>
+        .box1{
+            width: 300px;
+            height: 300px;
+            background-color:aqua;
+            float:left;
+        /*    将元素设置为浮动，并且可以取值left(向左浮动)和right，浮动可以把元素变成水平摆放*/
+        /*    容器空间不足以横向摆放就会放在下一行*/
+        }
+        .box2{
+            width: 300px;
+            height: 300px;
+            background-color:red;
+            float:left;
+        }
+        .box3{
+            width: 300px;
+            height: 300px;
+            background-color:yellow;
+            float:left;
+        }
+        .container{
+            width: 700px;
+            height: 700px;
+            background-color: blueviolet;
+            float: left;
+        }
+        
+        ul li{
+            float:left;
+            margin: 0 10px;
+        /*    设置一下每个li标签的外边距*/
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"><p>空间不够被挤到下一行</p></div>
+</div>
+<ul>
+    <li><a href="#">导航1</a></li>
+    <li><a href="#">导航2</a></li>
+    <li><a href="#">导航3</a></li>
+</ul>
+</body>
+</html>

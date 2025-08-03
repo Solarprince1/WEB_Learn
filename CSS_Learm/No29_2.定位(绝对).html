@@ -1,0 +1,59 @@
+<!--absolute定位基准是最近的已定位祖先元素(不能是兄弟元素),若没有则相对于初始包含块(整个页面)进行定位-->
+<!--如果父级元素不存在定位，就一级一级往上找，直至顶层文档(整个页面)-->
+<!--absolute随父元素滚动(如果有滚动条),可用于实现元素相对于容器的精确定位(如弹出菜单、浮动标签)-->
+<!--absolute脱离文档,每设置一个absolute定位就多一层,即absolute属性的元素之间也可以相互覆盖-->
+<!--有一个属性z-index可以设置堆叠顺序，拥有更高堆叠顺序的元素总会处于堆叠顺序低的元素前面-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>绝对定位</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            z-index: 1;
+        }
+        .parent{
+            width: 400px;
+            height: 400px;
+            background-color: yellowgreen;
+            position: relative;
+            top: 500px;
+            left: 700px;
+        }
+        .child{
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            position: absolute;
+            top: 150px;
+            right: 100px;
+            z-index: 2;
+        /*    z-index的值大于.box1，会改变覆盖顺序*/
+        }
+    </style>
+</head>
+<body>
+<div class="box1">
+    <span>没有定位基准，就相对整个页面来定位</span>
+</div>
+
+<div class="parent">
+    <span>可以看到这里的蓝色div容器虽然设置的是absolut，但是被包含在绿色大div里，而不是像红色的一样在外面
+    这是因为绿色的div设置了relative，成为了蓝色div的定位基准(因为是离的最近的祖先元素)
+    </span>
+    <div class="child"></div>
+    <div class="box1">
+        <span>红色的设置成绿色的子元素也会定位在绿色的里面</span>
+    </div>
+</div>
+
+<div class="box1"></div>
+</body>
+</html>

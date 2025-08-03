@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>关系选择器(后代选择器)</title>
+    <style>
+        ul li{
+        /*后代选择器，形式是E F{},选择所有被E元素包含的F元素，中间用空格隔开*/
+        /*注意要与合并选择器区分，合并选择器元素之间是逗号隔开，属于同级*/
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>item1</li>
+    <li>item2</li>
+    <li>item3</li>
+<!--    可以看见ul标签的子代li标签效果生效-->
+    <div>
+        <ol>
+            <li>item4</li>
+            <li>item5</li>
+            <li>item6</li>
+<!--            ol的子代li标签也可以生效，因为也被包含在ul中，算ul的后代-->
+        </ol>
+    </div>
+</ul>
+
+<br><br>
+
+<ol>
+    <li>other1</li>
+    <li>other2</li>
+    <li>other3</li>
+<!--    这里ol的li标签没有生效，因为它不是ul标签的子代(没有被包含在ul下)-->
+</ol>
+</body>
+</html>

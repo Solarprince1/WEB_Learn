@@ -1,0 +1,43 @@
+<!--浮动只有在需要的时候才能用，不能随便用，因为会有副作用-->
+<!--浮动副作用：会造成父元素高度的塌陷，后续元素会受到影响-->
+<!--元素高度塌陷：当父元素的所有子元素都设置了浮动时,父元素会失去高度(高度为0),无法包裹子元素,导致后续元素 "向上跑",破坏页面布局
+       原因是浮动元素脱离了文档流,父元素无法感知其存在,因此不会被撑开-->
+<!--后续元素受到影响:未浮动的元素会"无视"浮动元素的存在,可能被浮动元素覆盖,或文本内容环绕浮动元素(这是浮动的设计初衷,但在非文字场景下会变成副作用)-->
+<!--消除副作用需要清除浮动-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>浮动的副作用</title>
+    <style>
+        .container{
+            width: 500px;
+            /*height: 500px;*/
+            /*没有设置高度，但会被撑开，但是因为子元素都是浮动的，高度塌陷了，没有被撑开*/
+            background-color: #888;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            margin: 5px;
+            float:left;
+        }
+        .text{
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</div>
+<div class="text"></div>
+<!--    可以看到其他未浮动元素会受到影响-->
+</body>
+</html>

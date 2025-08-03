@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>清除浮动(受影响元素增加clear属性)</title>
+    <style>
+        .container{
+            width: 500px;
+            /*height: 500px;*/
+            background-color: #888;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            margin: 5px;
+            float:left;
+        }
+        .text{
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+            clear: both;
+        /*    增加clear属性,可以取值left(清除左浮动)、right和both，一般取both*/
+        /*    当元素设置 clear时,浏览器会强制该元素向下移动(增加margin-top),直到其顶部边缘低于所有浮动元素的底部边缘。
+                这确保了元素不会与浮动元素在垂直方向上重叠*/
+        /*    clear只影响元素自身在文档流中的位置，不会使其脱离文档流。元素依然遵循块级/行内元素的排列规则*/
+        /*    块级元素设置clear后仍会独占一行，宽度为父元素的100%*/
+        /*    行内元素设置clear无效，行内元素无法清除浮动，会被忽略*/
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="text"></div>
+<!--    受影响的元素增加clear后就可以正常显示-->
+</div>
+</body>
+</html>

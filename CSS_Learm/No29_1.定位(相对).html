@@ -1,0 +1,28 @@
+<!--position属性指定元素的定位类型：relative相对定位；absolute绝对定位；fixed固定定位-->
+<!--其中absolute和fixed脱离文档流-->
+<!--relative的核心作用是创建定位上下文(成为子元素 position: absolute的定位基准),同时不影响元素在文档流中的初始位置-->
+<!--absolute定位基准是最近的已定位祖先元素,若没有则相对于初始包含块(整个页面)进行定位-->
+<!--absolute随父元素滚动(如果有滚动条),可用于实现元素相对于容器的精确定位(如弹出菜单、浮动标签)-->
+<!--fixed是浏览器视口(Viewport),不随页面滚动而移动,可用于创建固定导航栏、悬浮按钮、广告横幅等-->
+<!--设置定位后可以用left、right、top、bottom进行调整位置-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>相对定位</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+            position: relative;
+            top: 50px;
+            left: 50px;
+        }
+    </style>
+</head>
+<body>
+<div>可以看见位置的改变</div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>弹性盒模型(Flex Box)</title>
+    <style>
+        /*弹性盒是一种当页面需要适应不同屏幕大小以及设备类型时确保元素拥有恰当行为的布局方式*/
+        /*可以更有效地对一个容器的子元素进行排列、对齐和分配空白空间*/
+        .container{
+            width: 500px;
+            height: 500px;
+            background-color: #555555;
+            
+            /*以下属性都是父元素的属性*/
+            
+            display: flex;
+        /*    弹性容器通过设置display属性值为flex将其定义为弹性容器默认弹性盒里内容横向摆放*/
+        /*    弹性容器外及弹性子元素内是正常渲染的,弹性盒子只定义弹性子元素如何在弹性容器内布局*/
+            flex-direction: row;
+        /*    默认弹性盒里内容横向摆放，通过该属性可以更改*/
+        /*    可取值row(默认,左对齐)、row-reverse(反转横向排列,右对齐)、column、column-reserve(反转纵向排列,从下往上排列)*/
+            justify-content: flex-end;
+        /*    该属性把弹性项沿着弹性容器的主轴线对齐*/
+        /*    可取值flex-start(默认),flex-end,center*/
+            align-items: center;
+        /*    该属性设置或检索弹性盒子元素在纵轴(水平)方向上的位置*/
+        /*    可取值flex-start(默认),flex-end,center*/
+        
+        }
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            flex-grow: 2;
+        /*    该属性用于定义弹性子元素如何分配父容器中多余的空间*/
+        /*    可取值0(默认,不扩展保持原样),1(子元素会根据剩余空间按比例扩展),2(或更大,扩展的比例是其他子元素的倍数)*/
+        /*    可以计算成权数，比如box1和box2是2/5，box3是1/5，这里可以看出width属性失效了(如果是column排布则height失效)*/
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            flex-grow: 2;
+        }
+        .box3{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</div>
+</body>
+</html>

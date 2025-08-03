@@ -1,0 +1,29 @@
+<!--选择器优先级顺序:行内样式(标签内直接添加样式) > ID选择器 > 类选择器 > 元素选择器 -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>类选择器</title>
+    <style>
+        *{
+            color: green;
+            font-size: 20px;
+        }
+        .color{ /*类选择器定义用.来定义，针对你想要的特定某一类标签使用(添加class属性且值同名)，优点是很灵活*/
+            color: red;
+        }
+        .size{
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+<p>没有添加类(class)的p标签，按全局(或默认)样式显示</p>
+<p class="color">添加了类的p标签，按类的样式显示</p>
+<!--类名不能以数字开头，同一个标签可以用多个类选择器，用空格分开-->
+
+<span class="color">添加了类的span标签，按类的样式显示，即使标签类型不同，样式也与上一行的p标签一样</span>
+<span class="color size">使用多个类选择器的span标签</span>
+</body>
+</html>

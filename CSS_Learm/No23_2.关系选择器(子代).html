@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>关系选择器(子代选择器)</title>
+    <style>
+        div>span{
+        /*子代选择器，形式是E>F{},F是E的子代，只有子代的F生效，嵌套生成的孙、重孙F元素不生效*/
+            color:red;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <span>div直系子代span会生效</span>
+    <p><span>嵌套在p标签里的span就是div的孙子，不是直接子元素，不会生效</span></p>
+</div>
+</body>
+</html>

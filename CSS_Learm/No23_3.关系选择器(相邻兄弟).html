@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>关系选择器(相邻兄弟)</title>
+    <style>
+        h3+p{
+        /*相邻兄弟选择器，形式是E+F{}，只有E相邻的F元素才生效*/
+            color:red;
+        }
+    </style>
+</head>
+<body>
+<p>这是与h3标签直接相邻的p标签(上方)</p>
+<h3>这是一个h3标签</h3>
+<p>这是与h3标签直接相邻的p标签(下方)</p>
+<p>这是不与h3标签直接相邻的p标签</p>
+</body>
+</html>

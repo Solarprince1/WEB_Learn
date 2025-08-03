@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>表格属性</title>
+    <style>
+        table,td{ /*table设置只有table生效，如果单元格也想有框就加个td*/
+            border:3px solid #ff94bb;
+        /*    设置边框粗细，默认为0，即没有边框,空格后面跟的是线的样式和颜色(跟color一样)，solid是实线*/
+        }
+        table{
+            border-collapse: collapse;
+        /*    边框折叠，这样设置可以免除table和td两个边框都显示导致的双边框*/
+            width: 300px;
+            height: 300px;
+        }
+        td{
+            text-align: center;
+        /*    表格内容的文本水平对齐方式，有left、center、right三种(默认left)*/
+            vertical-align: top;
+        /*    表格内容的文本垂直对齐方式，有top、center、bottom三种(默认center)*/
+            padding: 20px;
+        /*    设置单元格内容四周撑起的大小，适合用于没有设置表格宽高和单元格内容对齐方式的情况*/
+            background-color: gray;
+        /*    设置单元格的颜色*/
+            color: yellow;
+        /*    字体颜色*/
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+    </tr>
+</table>
+</body>
+</html>

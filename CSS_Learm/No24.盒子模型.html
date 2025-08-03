@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>盒子模型(Box Model)</title>
+    <style>
+        /*盒子模型可以看成一个快递盒，内容就是实物，内边距就是包裹在实物外的泡沫，边框就是快递和，外边距就是不同快递盒之间的距离*/
+        a{
+            font-size: 20px;
+        }
+        #div1{
+            width:100px;
+            height:100px;
+            background-color:#00ff00;
+            padding: 50px 10px;
+        /*    内边距，把自身撑大(只是看起来变大，实际大小还是原来的)，可以让内容不贴着容器显示*/
+        /*    一般设两个值，分别代表上下和左右撑起的大小*/
+        /*    还可以是padding-left/right/top/bottom*/
+            border:3px solid red;
+        /*    设置边框(包围在内边距外),第一个值是边框粗细,第二个值是边框属性(solid是实线),第三个值是颜色*/
+            margin:50px 10px;
+        /*    外边距，是完全透明的，可以把外边距内的所有东西与其他元素隔开*/
+        /*    一般设两个值，分别代表上下和左右撑起的大小*/
+        /*    还可以是margin-left/right/top/bottom*/
+        }
+        #div2{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            padding-left: 50px;
+            padding-right: 10px;
+            padding-top: 100px;
+            padding-bottom: 20px;
+            margin-left: 50px;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+<a href="../img/盒子模型概念.png">盒子模型的概念</a><br><br><br>
+
+<div id="div1">
+    <span>这是div1</span>
+</div>
+
+<div id="div2">
+    <span>这是div2</span>
+</div>
+</body>
+</html>
