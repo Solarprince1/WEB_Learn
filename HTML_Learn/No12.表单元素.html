@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>表单元素</title>
+</head>
+<body>
+<p>文本框：</p>
+<!--文本域通过<input type="text">来设定，当用户需要输入内容时就需要文本域-->
+
+<form>
+    <label>
+    <!--<label>标签，用于为表单控件（如输入框、复选框、单选按钮等）定义描述性文本。它的主要作用是提高表单的可用性和可访问性。-->
+        first name:
+        <input type="text" name="first name:">
+    </label>
+    <br>
+    last name: <input type="text" name="last name:">
+</form>
+
+<p>密码框(输入内容后会显示成加密符号，如星号或圆点)</p>
+<!--密码框通过<input type="password">来设定，当用户输入内容时就显示黑点-->
+<form>
+    username:<input type="text">
+    <br>
+    password:<input type="password">
+</form>
+
+<p>提交按钮</p>
+<!--提交按钮通过<input type="submit">来设定,点击按钮后就可以把数据提交到服务器-->
+<form>
+    username:<input type="text">
+    <br>
+    password:<input type="password">
+    <input type="submit" value="登录">
+<!--    value是替换文本，或者有以下第二种写法：-->
+    <span>第二种按钮写法：</span><button>登录</button>
+</form>
+</body>
+</html>

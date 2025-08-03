@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>合并单元格</title>
+</head>
+<body>
+<p>合并单元格6和7<b>(水平合并,colspan)</b>，15和20<b>(垂直合并,rowspan)</b></p>
+<p>注意:水平合并保留左面删右面,垂直合并保留上面删下面</p>
+<p>再合并16、17、21、22</p>
+<!--垂直合并(行级合并):rowspan,水平合并(列级合并):colspan-->
+<!--水平合并保留左面删右面,垂直合并保留上面删下面-->
+<table border="1" width="250" height="200">
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+    </tr>
+    <tr>
+        <td colspan="2">6、7</td>
+<!--    这里直接删掉<td>7</td>，否则会多出来一个单元格7-->
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>12</td>
+        <td>13</td>
+        <td>14</td>
+        <td rowspan="2">15、<br>20</td>
+    </tr>
+    <tr>
+        <td colspan="2" rowspan="2">16、17<br>21、22</td>
+<!--        <td>17</td>-->
+        <td>18</td>
+        <td>19</td>
+<!--    这里也是直接删除<td>20</td>-->
+    </tr>
+    <tr>
+<!--        <td>21</td>-->
+<!--        <td>22</td>-->
+        <td>23</td>
+        <td>24</td>
+        <td>25</td>
+    </tr>
+</table>
+</body>
+</html>

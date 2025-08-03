@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>form表单</title>
+</head>
+<body>
+<!--所有用户输入的地方都是用表单,比如登陆注册输入框、搜索框-->
+<!--表单由容器和控件组成，一个表单应该包含用户填信息的输入框、按钮等，这些都叫做控件，表单就是容器，能容纳各种控件-->
+<!--表单标签格式是：<form action="url" method="get/post" name="myform"></form>-->
+<!--action是服务器地址，name是表单名字，get和post是数据提交方式，get可以让url看到数据，post不能。一般get用于少量数据，post大量-->
+<!--这些属性跟后台相关，学习阶段(即本代码)可不写只写<form>标签-->
+
+<form>
+    <input type="text">
+<!--    输入框(表单的表单域)，这里的属性type="text"可以不加-->
+    <input type="submit">
+    <button>提交</button>
+<!--    两种添加按钮的方式,方法一是将type的值设为submit，方法二是直接使用<button>标签-->
+</form>
+</body>
+</html>

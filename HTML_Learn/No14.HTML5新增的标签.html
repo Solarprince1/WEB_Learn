@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5新增标签</title>
+</head>
+<body>
+<!--容器标签<div>,用于区分每个内容模块，比如购物网站的导航区域和下面的推荐列表就是不同的内容模块-->
+<!--比如一个导航区域：-->
+<div>
+    <ul type="none">
+        <li>手机精选</li>
+        <li>平板精选</li>
+        <li>电脑精选</li>
+    </ul>
+</div>
+<!--以及一个banner(横幅)区域：-->
+<div>
+    <img src="" alt="">
+    <img src="" alt="">
+    <span>....</span>
+</div>
+
+<!--属性id用于唯一标识一个元素（如页面顶部的导航栏），同一个 id 在页面中只能出现一次-->
+<div id="header"></div>
+<div id="nav"></div>
+<div id="article">
+    <div id="section"></div>
+<!--    模块嵌套-->
+</div>
+
+<!--注意,以上标签带有id属性均可以用class代替,class用于区分一类属性,可以被多个元素重复使用,适合批量选择,优于id(必须在整个界面中唯一)-->
+
+<!--这样写很乱，只能通过ID来区分每个模块是干什么的，于是有了以下标签：-->
+<header></header><!--头部标签-->
+
+<nav></nav><!--导航标签-->
+
+<article>
+<!--    <article>表示一个完整的、独立的内容块，它可以在没有上下文的情况下被理解和复用。比如博客文章、新闻报道等-->
+    <section></section>
+<!--    <section>内容的章节或区段,通常包含一个标题标签如<h3>-->
+</article>
+
+<aside></aside><!--侧边栏标签-->
+<footer></footer><!--底部标签-->
+
+<!--新标签是HTML5上的内容，但实际上很多网站仍然用以前的div标签，是因为旧浏览器科能不兼容新标签-->
+</body>
+</html>
