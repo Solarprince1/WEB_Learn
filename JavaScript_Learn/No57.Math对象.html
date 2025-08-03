@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Math对象</title>
+</head>
+<body>
+<script>
+    //Math是Javascript的原生对象，提供各种数学功能
+    
+    
+//Math.abs()返回参数的绝对值
+    console.log(Math.abs(-100));//100
+
+    
+//Math.max()/Math.min()
+    console.log(Math.max(1,5,4));//5
+    console.log(Math.min(1,5,4));//1
+    console.log(Math.max());     //-Infinity(中文：无穷)
+    console.log(Math.min());     //Infinity
+    
+    
+//Math.floor()返回小于参数的最大的整数，Math.ceil()返回大于参数的最小整数.(floor:地板、ceil:天花板)
+    console.log(Math.floor(3.2));//3
+    console.log(Math.ceil(3.2)); //4
+    
+    
+//Math.random()返回0~1之间的一个伪随机数，可能等于0但一定小于1
+    console.log(Math.random());//每次都不一样
+    //任意范围的随机数生成函数：
+    function getRandomArbitrary(min,max){
+        return Math.random()*(max-min)+min;
+        //Math.random()返回值小于1，与max-min相乘后一定小于差值，再加上min,就一定在范围之内
+    }
+    
+    console.log(getRandomArbitrary(5,10));//返回5~10之间的某一值
+</script>
+</body>
+</html>

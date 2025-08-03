@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>比较、布尔运算符</title>
+</head>
+<body>
+<script>
+    //比较运算符常见的有>、<、>=、<=、==、!=
+    //还有===(严格相等运算符)、！==(严格不相等运算符)
+    
+    var num1=10;
+    var num2=20;
+    console.log(num1>num2);//返回false
+    console.log(num1<num2);//返回true
+    
+    var num3=10;
+    var num4="10";
+    console.log(num3==num4);//true
+//     在进行比较时，会自动进行类型转换，将两个值转换为相同类型后再进行比较
+    console.log(num3===num4);//false
+//     严格等于,检查数值和类型是否都相同
+    
+    console.log(num3!=num4);//false
+    console.log(num3!==num4);//true
+    
+    
+    //布尔运算符有 || && !，不再赘述
+//     注意以下值取反(!)均为true：null、undefined、0、false、NaN、""(空字符串)
+</script>
+</body>
+</html>

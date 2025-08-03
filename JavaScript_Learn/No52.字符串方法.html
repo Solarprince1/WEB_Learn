@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串方法</title>
+</head>
+<body>
+<script>
+//charAt方法,返回指定位置的字符串,参数是从0开始编号的
+    var str1 = "Hello";
+    console.log(str1.charAt(1));//返回e
+    console.log(str1.charAt(str1.length-1));//返回o
+    //参数也可以为负数，或大于字符串长度，此时会返回空字符串
+    console.log(str1.charAt(str1.length));//返回空值
+
+    
+//concat方法,用于连接两个字符串,返回一个新字符串,不改变原字符串(可以用"+"号代替)
+    var str2 = "World";
+    console.log(str1.concat(str2));//返回HelloWorld
+        //等同于console.log(str1+str2);
+    console.log(str1.concat(str1,"!!!!"));//可以接收多个值,返回HelloWorld!!!!
+    //如果参数不是字符串,concat方法会将其转化为字符串再连接
+    var num =100;
+    console.log(str1.concat(str2,num));//返回HelloWorld100
+    
+
+//substring方法,用于从原字符串取出子字符串并返回,不改变原字符串。第一个参数代表子字符串开始位置,第二个表示结束位置(返回结果不含该位置的字符)
+    //  如果省略第二个参数则表示子字符串一致截取到原字符串结束,如果参数为负则自动转换为0
+    var name = "Steve";
+    console.log(name.substring(2,name.length));//eve
+    console.log(name.substring(2));//eve
+
+
+//substr方法,用于从原字符串取出子字符串并返回,不改变原字符串。第一个参数代表子字符串开始位置,第二个表示子字符串长度
+    //  如果省略第二个参数则表示子字符串一致截取到原字符串结束,
+    //  如果第一个参数为负则表示倒数计算的字符位置;如果第二个参数为负则自动转换为0,返回空字符串
+    console.log(name.substr(2,3));//eve
+
+
+//indexOf方法,用于确定一个字符串在另一个字符串中第一次出现的位置,返回结果是匹配开始的位置,如果返回-1则表示不匹配
+    console.log(name.indexOf('e'));//2
+    console.log(name.indexOf('a'));//-1
+    //还可以接受第二个参数,表示从该位置开始向后匹配
+    console.log(name.indexOf('e',3));//4
+
+
+//trim方法,用于去除字符串两端的空格(包括制表符(\t) 换行符(\n) 和回车符(/r)),返回一个新字符串,不改变原字符串
+//ES6扩展方法有trimStart()和trimEnd()，分别消除开头和结尾的空格
+
+
+//split(中文为分裂)方法,按规则分割字符串,返回一个由分割出来的子字符串组成的数组,接收一个字符参数作为分割依据
+    var str3 = "My|name|is|Steve";
+    console.log(str3.split('|'));//['My','name','is','Steve']
+    //如果是字符为空则数组成员是 原字符串每一个字符
+    console.log('abc'.split(''));//['a','b','c']
+    //如果没有参数则数组唯一成员就是原字符串
+    //还可以接收第二个参数(数值),来规定返回数组的最大成员数
+
+</script>
+</body>
+</html>

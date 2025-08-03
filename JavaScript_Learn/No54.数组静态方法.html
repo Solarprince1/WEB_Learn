@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>数组静态方法</title>
+</head>
+<body>
+<script>
+//Array.isArray(),返回一个布尔值表示参数是否为数组，可以弥补typeof方法的不足
+    console.log(typeof [1,2,3])//返回object
+    console.log (Array.isArray([1,2,3]))//返回true
+    
+    
+    
+    
+//push()/pop()，push用于在数组末端添加一个或多个元素，并返回添加新元素后数组的长度，会改变原数组
+    var arr = ["Hello"];
+    var arr_length = arr.push("world","and","you");
+    console.log(arr);       //["Hello", "world", "and", "you"]
+    console.log(arr_length);//4
+    //pop用于删除数组的最后一个元素，并返回该元素，会改变原数组
+    var pop_Stuff = arr.pop();
+    console.log(pop_Stuff);//"you"
+    console.log(arr);      //["Hello", "world", "and"]
+    arr.push("you");//复原一下
+    
+    
+    
+    
+//shift()/unshift()，shift用于删除数组的第一个元素，并返回该元素
+    var shift_Stuff = arr.shift();
+    console.log(shift_Stuff);//"Hello"
+    console.log(arr);        //["world", "and", "you"]
+    
+    //shift()可用于清空数组元素：
+    var delete_arr = [100,200,300];
+    var item;
+    while(item = delete_arr.shift()){
+        //每次循环都删除头元素并返回，如果没删完就可以继续循环，如果删完就会返回undefined，循环不会继续
+        //可以添加一个console.log(item)来检查每次删除的元素
+    }
+    console.log(delete_arr);//返回[]
+    
+    //unshift()用于在数组第一个位置添加元素(可以有多个,添加时按顺序)，并返回新数组的长度，会改变原数组
+    arr_length = arr.unshift("!!!","Hello");
+    console.log(arr_length);//5
+    console.log(arr);       //["!!!","Hello", "world", "and", "you"]
+    arr.shift();//复原一下
+    
+    
+    
+    
+//join(),用于指定参数作为分隔符，将所有数组成员连接为一个字符串返回，如果不提供参数则默认用逗号分隔.该方法不改变原数组
+    console.log(arr.join());//Hello,world,and,you
+    console.log(arr.join("|"));//Hello|world|and|you
+    console.log(arr.join(" "));//Hello world and you
+    //null和undefined会被转成空字符转
+    var null_undefined = [111,null,undefined];
+    console.log(null_undefined.join());//111,,
+    //数组的join可以配合字符串的split实现数组与字符串的互换
+    var join_split = ["Hello","world"];
+    console.log(join_split.join(" "));//Hello world
+    result = join_split.join(" ");
+    console.log(result.split(" "));//["Hello","world"]
+    
+    
+    
+    
+//concat(),用于多个数组的合并，将数组的新成员添加到原数组的末尾，然后返回一个新数组。不改变原数组
+    var names = ["Steve","Jack","Black"];
+    console.log(arr.concat(names,["and","others"]));
+    //该方法最常用的场景是上拉加载，合并数据(如朋友圈，已加载好的30条已经看完，上拉加载再刷新30条，合并到前30条)
+    
+    
+    
+    
+//reverse(),用于颠倒排列数组元素，返回改变后的数组，该方法将改变原数组！
+    var abs = ["a","b","c"];
+    abs.reverse();
+    console.log(abs);//["c", "b", "a"]
+    //翻转显示字符串hello world
+    var hello_world = "hello world";
+    var change =  hello_world.split('').reverse().join("");
+    console.log(change);
+    
+    
+    
+    
+//indexOf(),返回给定元素在数组中第一次出现的位置，如果没有则返回-1
+    var num = [1,2,3,4,5,1];
+    console.log(num.indexOf(2));//1
+    console.log(num.indexOf(7));//-1
+    //可以接受第二个参数，表示搜索的开始位置
+    console.log(num.indexOf(1,2));//5
+
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!--ES5中有六种数据类型：数值、字符串、布尔值、对象、undefined、null-->
+<!--数值、字符串、布尔值又称原始类型(基础类型)-->
+<!--ES6又新增了两种类型：Symbol、BigInt,本节暂时不提-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据类型</title>
+</head>
+<body>
+<script>
+    //原始类型(基础类型)：
+    
+//     数值类型
+    var num = 20;
+    
+//     字符串类型,要用引号
+    var name = "Steve";
+    
+//     布尔类型
+    var flag1 = true;
+    var flag2 = false;
+
+    
+    //合成类型(复合类型,可以包含数值、字符串、布尔)：
+    
+//     对象(object)
+    var user = {
+        name:"Steve",
+        age:20,
+        marry_or_not:false,
+        //再嵌套一个合成类型
+        job:{
+            job_name:"Java",
+            salary:3000
+        }
+    }
+    
+    //undefined和null没什么特殊意义,一般都是空值
+    // undefined:表示"未定义",即变量被声明了,但从未赋值,或访问了不存在的属性/元素,它是 JavaScript 自动赋予的默认值
+    // null:表示 "空值",是人为主动赋值的结果,用于明确表示"此处应该为空"(开发者手动设置的空状态).它不是默认值，必须显式赋值。
+    var val1 = null;
+    var val2 = undefined;
+    
+</script>
+</body>
+</html>

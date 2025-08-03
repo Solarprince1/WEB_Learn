@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串</title>
+</head>
+<body>
+<script>
+    //字符串用单引号或双引号包裹,如果字符串本身有引号,则不能用双引号嵌套双引号,单引号嵌套单引号，必须互相嵌套
+    var str1 = "他的名字是‘Steve’";
+    var str2 = '他的名字是“Steve”';
+    
+    //如果一定要单套单，双套双，就要用反斜杠来转义
+    var str3 = "他的名字是\"Steve\"";
+    var str4 = '他的名字是\'Steve\'';
+    
+    //进行编程时字符串默认只有一行,如果要换行也要用反斜杠(但是输出出来还是在一行)
+    var str5 = "换行的方法：\
+    是使用\
+    反斜杠转义";
+    
+    //length属性：获取字符串长度(str.length)
+    var str6 = "hello";
+    var num = str6.length;//5
+    console.log(num)
+    
+    
+</script>
+</body>
+</html>

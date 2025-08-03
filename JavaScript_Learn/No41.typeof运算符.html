@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>typeof运算符</title>
+</head>
+<body>
+<script>
+    //typeof多用于判断基本数据类型
+    
+    var age = 10;
+    var name = "Steve";
+    var flag = true;
+    var user = {};
+    
+    console.log(typeof age);
+//     会打印typeof的返回值"number"
+    console.log(typeof name);
+//     会打印typeof的返回值"string"
+    console.log(typeof flag);
+//     会打印typeof的返回值"boolean"
+    console.log(typeof user);
+//     会打印typeof的返回值"object"(并不准确,因为很多情况都可以返回object,比如数组也可以)
+    console.log(typeof null);
+    console.log(typeof undefined);
+//     typeof null返回object,typeof undefined返回undefined
+</script>
+</body>
+</html>

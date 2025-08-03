@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for循环</title>
+</head>
+<body>
+<script>
+    //for(初始表达式; 条件; 迭代因子){语句}, 和C语言一样
+    
+    for(var i=1; i<=100;i++){
+        console.log(i);
+    }
+    
+//     for语句的三个表达式可以省略任何一个(不推荐这么做),也可以全部省略 ==> for( ; ; ) ,但这样会导致无限循环
+    var j=0;
+    for(; j<10; j++){//省略表达式也不能去掉分号
+        console.log(j);
+    }
+    
+    //打印九九乘法表
+    for(var i=1; i<=9; i++){
+        for(var j=1; j<=i; j++){
+            document.write(j+"x"+i+"="+i*j+" ");
+        }
+        document.write("<br>");
+    }
+</script>
+</body>
+</html>

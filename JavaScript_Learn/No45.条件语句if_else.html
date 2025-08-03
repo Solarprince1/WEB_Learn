@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>条件语句if和else</title>
+</head>
+<body>
+<script>
+    //if语法如下：if(条件句){执行语句}
+    
+    var num1=10;
+    var num2=20;
+    
+    if(num1 < num2){
+        console.log("num1比num2小");
+    }
+    
+    //if(条件句){}else{}
+    if(num1 == num2){
+        console.log("num1和num2数值相同")
+    }else{
+        console.log("num1和num2数值不同")
+    }
+    
+    //if(条件句){}else if(条件句){}else{}
+    var day=3;
+    if(day==1){
+        console.log("今天周一");
+    }
+    else if(day==2){
+        console.log("今天周二");
+    }
+    else{
+        console.log("今天既不是周一也不是周二");
+    }
+    
+    //还有嵌套,不再赘述
+</script>
+</body>
+</html>

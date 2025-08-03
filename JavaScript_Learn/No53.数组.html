@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>数组</title>
+</head>
+<script>
+    //数组用[]为标志,任意类型的数据都可以放进数组,也可以数组套数组
+    var person = ["Steve","Frank"];//也可以先定义，后面再赋值
+    console.log(person[1]);
+    
+    var info = [20,"Jack",true];
+    for(var i=0;i<3;i++){
+        console.log(info[i]);
+    }
+    
+    //另一种遍历方式
+    for(var k in info){
+        console.log(info[k]);
+    }
+    
+    console.log(info.length);//获取数组成员数量，3
+</script>
+</html>

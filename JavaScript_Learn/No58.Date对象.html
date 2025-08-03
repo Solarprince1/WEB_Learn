@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date对象</title>
+</head>
+<body>
+<script>
+    //Date对象是Javascript原生时间库，它以1970年1月1日00:00:00作为时间的零点，可以表示的时间范围是前后各一亿天(单位是毫秒)
+    
+    
+    //Date.now()返回当前时间距离时间零点的毫秒数,相当于Unix时间戳乘以1000
+    //时间戳是指从1970年 1月 1日 00:00:00(UTC时间,不是北京时间)开始到当前时间点之间的总秒数
+    console.log(Date.now());//记录一下现在时间距离是 :1754192324916
+    console.log(new Date(1754192324916));
+    //直接使用new Date()且不传入任何参数时，它会返回一个表示当前日期和时间的 Date 对象实例
+    console.log(new Date());//获取最新时间
+   
+    //可以通过调用Date对象的实例方法，获取具体的日期和时间信息
+    /*实例方法 get 类
+    getTime ()：返回实例距离 1970 年 1 月 1 日 00:00:00 的毫秒数
+    getDate ()：返回实例对象对应每个月的几号（从 1 开始）
+    getDay ()：返回星期几，星期日为 0，星期一为 1，以此类推
+    getYear ()：返回距离 1900 的年数
+    getFullYear ()：返回四位的年份
+    getMonth ()：返回月份（0 表示 1 月，11 表示 12 月）
+    getHours ()：返回小时（0-23）
+    getMilliseconds ()：返回毫秒（0-999）
+    getMinutes ()：返回分钟（0-59）
+    getSeconds ()：返回秒（0-59）*/
+    console.log(new Date(1754192324916).getFullYear()); //2025(当时是2025年)
+    console.log(new Date(1754192324916).getMonth()+1);    //8(当时是8月,月份从0开始)
+    console.log(new Date(1754192324916).getDate());     //3(当时是8月3日)
+    console.log(new Date(1754192324916).getDay());      //0(当时是周日)
+    
+    var year = new Date(1754192324916).getFullYear();
+    var month = new Date(1754192324916).getMonth()+1;
+    var date = new Date(1754192324916).getDate();
+    console.log(year+"-"+month+"-"+date);
+    //也可以获取最新的:
+    console.log(new Date().getDate());//显示最新日期
+    
+    //获取当前日期到本年结束剩余的天数的函数(最终结果上取整):
+    function leftDays(){
+        var today = new Date();
+        var endYear = new Date(today.getFullYear(),11,31,23,59,59,999);//11代表12月
+        var msPerDay = 24*60*60*1000;//每天的毫秒数
+        console.log(Math.ceil((endYear-today)/msPerDay));//两个Date实例相减得到两个日期之间的毫秒数差值,除以每天的毫秒数可获得天数
+    }
+    
+    leftDays();
+</script>
+</body>
+</html>

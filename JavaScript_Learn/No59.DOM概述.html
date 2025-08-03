@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>DOM概述</title>
+    <style>
+        hr{
+            width:95%;
+            margin:0 auto;
+        }
+        .DOM-img{
+            width:1000px;
+            height:500px;
+            background-image: url("../img/DOM示意图.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            box-shadow: 0 0 7px #888888;
+            border-radius: 10px;
+            margin:50px auto;
+        }
+        .text{
+            width:1300px;
+            margin:0 auto;
+            font-size:18px;
+        }
+        .DOM-tree{
+            width:300px;
+            height: 300px;
+            background-image: url("../img/DOM树.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            box-shadow: 2px 2px 7px #888;
+            border-radius: 10px;
+            margin: 17px auto;
+        }
+        .explain-model{
+            width: 1300px;
+            background-color: #9ef7ff;
+            padding-left: 10px;
+            border-left: 10px solid cornflowerblue;
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+<h1>DOM概述</h1><hr >
+<div class="DOM-img"></div>
+<div class="text">
+    <span>  DOM是JavaScrip操作网页的接口，全称为“文档对象模型”（Document Object Model）。
+        它的作用是将网页转为一个 JavaScript 对象，从而可以用脚本进行各种操作（比如对元素增删内容）</span>
+    <span>浏览器会根据 DOM 模型，将结构化文档 HTML 解析成一系列的节点，再由这些节点组成一个树状结构（DOM Tree）。
+        所有的节点和最终的树状结构，都有规范的对外接口</span>
+    <span>DOM 只是一个接口规范，可以用各种语言实现。所以严格地说，DOM 不是 JavaScript 语法的一部分，但是 DOM 操作是 JavaScript 最常见的任务，
+        离开了 DOM，JavaScript 就无法控制网页。另一方面，JavaScript 也是最常用于 DOM 操作的语言</span><br><br>
+    <h2>节点</h2><br>
+    <span>DOM的最小组成单位叫做节点（node）,即DOM将页面中能操作的元素看作节点，以操作节点的形式操作页面
+        文档的树形结构（DOM树），就是由各种不同类型的节点组成。每个节点可以看作是文档树的一片叶子</span>
+    <div class="DOM-tree"></div>
+    <p>节点的类型有七种</p>
+    <div class="explain-model">
+        <p>Document：整个文档的顶层节点</p>
+        <p>DocumentType：doctype标签</p>
+        <p>Element：网页的各种HTML标签</p>
+        <p>Attribute：网页元素的属性(如class="right")</p>
+        <p>Text：标签之间或标签包含的文本</p>
+        <p>Comment：注释</p>
+        <p>DocumentFragment：文档的片段</p>
+    </div>
+    <h2>节点树</h2>
+    <span>一个文档的所有节点，按照所在的层级，可以抽象成一种树状结构。这种树状结构就是 DOM 树。
+        它有一个顶层节点，下一层都是顶层节点的子节点，然后子节点又有自己的子节点，就这样层层衍生出一个金字塔结构，
+        倒过来就像一棵树</span><br><br><br>
+    <span>浏览器原生提供document节点，代表整个文档</span>
+    <p>除了根节点，其他节点都有三种层级关系</p>
+    <div class="explain-model">
+        <p>父节点关系(parentNode)：直接的那个上级节点</p>
+        <p>子节点关系(childNodes)：直接的下级节点</p>
+        <p>同级节点关系(sibling)：拥有同一个父节点的节点</p>
+    </div>
+    <h2>Node.nodeType属性</h2>
+    <p>不同节点的nodeType属性值和对应的常量如下：</p>
+    <div class="explain-model">
+        <p>文档节点)document)：9，对应常量 Node.DOCUMENT_NODE</p>
+        <p>元素节点(element)：1，对应常量 Node.ELEMENT_NODE</p>
+        <p>属性节点(att)）：2，对应常量 Node.ATTRIBUTE_NODE</p>
+        <p>文本节点(text)：3，对应常量 Node.TEXT_NODE</p>
+        <p>文档片断节点(DocumentFragment)：11，对应常量 Node.DOCUMENT_FRAGMENT_NODE</p>
+    </div>
+</div>
+
+</body>
+</html>

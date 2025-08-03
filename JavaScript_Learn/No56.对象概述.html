@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象概述</title>
+</head>
+<body>
+<script>
+    var user1 = {
+        //由一对对"键:值"组成,每一个健名都成为对象的属性，键值可以是任何数据类型
+        name:"Steve",
+        age:23
+    }
+    //对象的读取方式：对象名.属性
+    console.log(user1.age);//23
+    
+    var user2 = {
+        //如果一个属性的值是函数，通常把这个值叫做"方法"，可以像函数一样调用
+        getName: function (name){
+            return name;
+        }
+    }
+    var Jack_Name = user2.getName("Jack");
+    console.log(Jack_Name)
+    
+    //如果对象的属性值还是一个对象，就形成了链式引用
+    var user3 = {
+        name:"Sam",
+        Job:{
+            Position:"CEO",
+            Salary:10000
+        }
+    }
+    
+    console.log(user3.Job.Position);
+</script>
+</body>
+</html>

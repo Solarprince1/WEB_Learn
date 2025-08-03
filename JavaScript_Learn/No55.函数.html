@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>函数</title>
+</head>
+<script>
+    //函数通过function命令声明，function后接函数名，函数名后接圆括号，里面包含传入参数
+    function add(a,b){
+        console.log(a+b);
+    }
+    
+    add(1,2);
+    
+    //函数名的提升：Javascript引擎将函数名视同变量名，所以采用function声明函数时，整个函数会像声明变量一样被提升到代码头部，即可以先调用后创建
+    console.log(subtraction(2,1));
+    
+    function subtraction(a,b){
+        return a-b;//函数返回值
+    }
+    
+    
+</script>
+</html>
